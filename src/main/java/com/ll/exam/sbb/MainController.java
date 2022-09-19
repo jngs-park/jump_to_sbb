@@ -73,7 +73,7 @@ public class MainController {
     public int showMinus(int a, int b) {
         return a - b;
     }
-    @GetMapping("/gugudan")
+    @GetMapping("/gugudan") 
     @ResponseBody
     public String showGugudan(Integer dan, Integer limit) {
         if (limit == null) {
