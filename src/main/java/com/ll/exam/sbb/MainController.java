@@ -136,7 +136,8 @@ public class MainController {
                 .stream()
                 .filter(a -> a.getId() == id) // 1번
                 .findFirst()
-                .get();
+                .orElse(null);
+
 
         return article;
     }
@@ -148,10 +149,11 @@ public class MainController {
                 .stream()
                 .filter(a -> a.getId() == id) // 1번
                 .findFirst()
-                .get();
+                .orElse(null);
+
 
         if (article == null) {
-            return "%d번 게시물은 존재하지 않습니다.".formatted(article.getId());
+            return "%d번 게시물은 존재하지 않습니다.".formatted(id);
         }
 
         article.setTitle(title);
